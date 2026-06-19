@@ -1,8 +1,14 @@
-import { NavLink } from "react-router-dom";
 import { MainMenuRootList } from "@/shared/mobile-menu/MobileMenuCloneContext";
+import { NavLink } from "react-router-dom";
 
 const MEGA_ARROW = (
-  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="13"
+    height="13"
+    viewBox="0 0 13 13"
+    fill="none"
+  >
     <path
       d="M10.0208 3.41421L1.41421 12.0208L0 10.6066L8.60659 2H1.02082V0H12.0208V11H10.0208V3.41421Z"
       fill="currentColor"
@@ -120,7 +126,10 @@ const CONTACT_LINKS: Item[] = [
 
 function MenuLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
-    <NavLink to={to} className={({ isActive }) => (isActive ? "active" : undefined)}>
+    <NavLink
+      to={to}
+      className={({ isActive }) => (isActive ? "active" : undefined)}
+    >
       {children}
     </NavLink>
   );
@@ -157,8 +166,17 @@ export default function MainMenu() {
   return (
     <MainMenuRootList>
       <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active" : undefined)}
+        >
           <LinkSwap label="Home" />
+        </NavLink>
+
+        {/* 
+          Home pages other tamplate
+          <a href="#" onClick={(e) => e.preventDefault()}> replaced by Navlink
+          <LinkSwap label="Page" />
         </a>
         <div className="at-submenu submenu at-megamenu">
           <div className="row">
@@ -169,7 +187,8 @@ export default function MainMenu() {
               <MegaColumn title="Dark Version" items={HOME_DARK} />
             </div>
           </div>
-        </div>
+        </div> 
+        */}
       </li>
 
       <li className="has-dropdown">
