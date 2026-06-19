@@ -152,6 +152,26 @@ function MegaColumn({ title, items }: { title: string; items: Item[] }) {
     </div>
   );
 }
+// Customize MagaColam
+function MegaColumnCustoms({ title, to }: { title: string; to: string }) {
+  return (
+    <div className="at-megamenu-box">
+      <div className="at-megamenu-title-wrap">
+        <span className="at-megamenu-title">
+          <NavLink to={to}>{title}</NavLink>
+        </span>
+        {/* {MEGA_ARROW} */}
+      </div>
+      {/* <ul>
+        {items.map((it) => (
+          <li key={it.label}>
+            <MenuLink to={it.to}>{it.label}</MenuLink>
+          </li>
+        ))}
+      </ul> */}
+    </div>
+  );
+}
 
 function LinkSwap({ label }: { label: string }) {
   return (
@@ -165,15 +185,15 @@ function LinkSwap({ label }: { label: string }) {
 export default function MainMenu() {
   return (
     <MainMenuRootList>
-      <li className="has-dropdown">
+      <li className="with-out-dropdown">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "active" : undefined)}
         >
           <LinkSwap label="Home" />
         </NavLink>
-
-        {/* 
+      </li>
+      {/* 
           Home pages other tamplate
           <a href="#" onClick={(e) => e.preventDefault()}> replaced by Navlink
           <LinkSwap label="Page" />
@@ -189,7 +209,6 @@ export default function MainMenu() {
           </div>
         </div> 
         */}
-      </li>
 
       <li className="has-dropdown">
         <a href="#" onClick={(e) => e.preventDefault()}>
@@ -198,10 +217,10 @@ export default function MainMenu() {
         <div className="at-submenu submenu at-megamenu">
           <div className="row">
             <div className="col-xl-4">
-              <MegaColumn title="About Us" items={ABOUT_LINKS} />
+              <MegaColumnCustoms title="About Us" to="/about-1" />
             </div>
             <div className="col-xl-4">
-              <MegaColumn title="Services" items={SERVICE_LINKS} />
+              <MegaColumnCustoms title="Services" to="services-2" />
             </div>
             <div className="col-xl-4">
               <MegaColumn title="Other" items={OTHER_LINKS} />
@@ -209,27 +228,16 @@ export default function MainMenu() {
           </div>
         </div>
       </li>
-
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
-          <LinkSwap label="Portfolio" />
-        </a>
-        <div className="at-submenu submenu at-megamenu">
-          <div className="row">
-            <div className="col-xl-4">
-              <MegaColumn title="Creative" items={PORTFOLIO_CREATIVE} />
-            </div>
-            <div className="col-xl-4">
-              <MegaColumn title="Classic" items={PORTFOLIO_CLASSIC} />
-            </div>
-            <div className="col-xl-4">
-              <MegaColumn title="Details" items={PORTFOLIO_DETAILS} />
-            </div>
-          </div>
-        </div>
+      <li className="with-out-dropdown">
+        <NavLink
+          to="/portfolio-split"
+          className={({ isActive }) => (isActive ? "active" : undefined)}
+        >
+          <LinkSwap label="Portfelio" />
+        </NavLink>
       </li>
 
-      <li className="has-dropdown">
+      {/* <li className="has-dropdown">
         <a href="#" onClick={(e) => e.preventDefault()}>
           <LinkSwap label="Shop" />
         </a>
@@ -240,9 +248,9 @@ export default function MainMenu() {
             </li>
           ))}
         </ul>
-      </li>
+      </li> */}
 
-      <li className="has-dropdown">
+      {/* <li className="has-dropdown">
         <a href="#" onClick={(e) => e.preventDefault()}>
           <LinkSwap label="News" />
         </a>
@@ -253,19 +261,23 @@ export default function MainMenu() {
             </li>
           ))}
         </ul>
-      </li>
+      </li> */}
 
-      <li className="has-dropdown">
-        <a href="#" onClick={(e) => e.preventDefault()}>
+      <li className="with-out-dropdown">
+        <NavLink
+          to="/archive-1"
+          className={({ isActive }) => (isActive ? "active" : undefined)}
+        >
+          <LinkSwap label="Blog" />
+        </NavLink>
+      </li>
+      <li className="with-out-dropdown">
+        <NavLink
+          to="/contact-1"
+          className={({ isActive }) => (isActive ? "active" : undefined)}
+        >
           <LinkSwap label="Contact" />
-        </a>
-        <ul className="at-submenu submenu">
-          {CONTACT_LINKS.map((l) => (
-            <li key={l.label}>
-              <MenuLink to={l.to}>{l.label}</MenuLink>
-            </li>
-          ))}
-        </ul>
+        </NavLink>
       </li>
     </MainMenuRootList>
   );
