@@ -3099,13 +3099,16 @@ input[type="color"] {
 .header-10 #header10Nav.at-main-menu.menu-light.style-1 nav ul li .submenu {
   background: rgba(var(--at-neutral-0-rgb), 0.98);
 }
-.header-10 .at-main-menu.menu-light nav ul li.has-dropdown > a {
+.header-10 .at-main-menu.menu-light nav ul li.has-dropdown > a,
+.header-10 .at-main-menu.menu-light nav ul li.with-out-dropdown > a {
   color: var(--at-neutral-950);
 }
-.header-10 .at-main-menu.menu-light nav ul li.has-dropdown > a::after {
+.header-10 .at-main-menu.menu-light nav ul li.has-dropdown > a::after,
+.header-10 .at-main-menu.menu-light nav ul li.with-out-dropdown > a::after {
   filter: none;
 }
-.header-10 .at-main-menu.menu-light nav ul li:hover.has-dropdown > a {
+.header-10 .at-main-menu.menu-light nav ul li:hover.has-dropdown > a,
+.header-10 .at-main-menu.menu-light nav ul li:hover.with-out-dropdown > a {
   color: var(--at-neutral-950);
   background: color-mix(in srgb, var(--at-neutral-950) 8%, transparent);
 }
@@ -3747,14 +3750,17 @@ input[type="color"] {
   opacity: 1;
   transform: scale(1);
 }
-.at-main-menu.menu-light nav ul li:hover.has-dropdown > a {
+.at-main-menu.menu-light nav ul li:hover.has-dropdown > a,
+.at-main-menu.menu-light nav ul li:hover.with-out-dropdown > a {
   color: #fff;
   background: rgba(255, 255, 255, 0.2);
 }
-.at-main-menu.menu-light nav ul li.has-dropdown > a {
+.at-main-menu.menu-light nav ul li.has-dropdown > a,
+.at-main-menu.menu-light nav ul li.with-out-dropdown > a {
   color: #fff;
 }
-.at-main-menu.menu-light nav ul li.has-dropdown > a::after {
+.at-main-menu.menu-light nav ul li.has-dropdown > a::after,
+.at-main-menu.menu-light nav ul li.with-out-dropdown > a::after {
   filter: invert(1);
 }
 .at-main-menu nav ul li {
@@ -3762,7 +3768,8 @@ input[type="color"] {
   display: inline-block;
   position: relative;
 }
-.at-main-menu nav ul li.has-dropdown > a {
+.at-main-menu nav ul li.has-dropdown > a,
+.at-main-menu nav ul li.with-out-dropdown > a {
   color: var(--at-common-black);
   position: relative;
   transition: all 0.4s ease 0.3s ease-out;
@@ -3785,7 +3792,8 @@ input[type="color"] {
   opacity: 1;
   transform: scale(1);
 }
-.at-main-menu nav ul li:hover.has-dropdown > a {
+.at-main-menu nav ul li:hover.has-dropdown > a,
+.at-main-menu nav ul li:hover.with-out-dropdown > a {
   transition: all 0.4s ease 0.3s ease-out;
 }
 .at-main-menu nav ul li a {
@@ -19729,10 +19737,9 @@ input.footer-15__form-input:focus {
 @media (min-width: 1200px) {
   .sec-6-home-10__layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(
-        220px,
-        min(28vw, 407px)
-      ) minmax(0, 1fr);
+    grid-template-columns:
+      minmax(0, 1fr) minmax(220px, min(28vw, 407px))
+      minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     gap: clamp(20px, 2.5vw, 32px);
     align-items: start;
@@ -32163,10 +32170,9 @@ input.footer-15__form-input:focus {
 @media (min-width: 1200px) {
   .sec-6-home-15__layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(
-        220px,
-        min(28vw, 407px)
-      ) minmax(0, 1fr);
+    grid-template-columns:
+      minmax(0, 1fr) minmax(220px, min(28vw, 407px))
+      minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     gap: clamp(6px, 0.8vw, 10px);
     align-items: start;
@@ -38841,7 +38847,8 @@ body.at-magic-cursor #magic-cursor {
 [data-bs-theme="dark"] .dark-mode-invert {
   filter: invert(1);
 }
-[data-bs-theme="dark"] .at-main-menu nav ul li.has-dropdown > a::after {
+[data-bs-theme="dark"] .at-main-menu nav ul li.has-dropdown > a::after,
+[data-bs-theme="dark"] .at-main-menu nav ul li.with-out-dropdown > a::after {
   filter: invert(1);
 }
 [data-bs-theme="dark"] .changeless {
@@ -38904,43 +38911,8 @@ body.at-magic-cursor #magic-cursor {
 }
 /*# sourceMappingURL=main.css.map */
 
-
-
-
 /* MY change Start */
 
-
-.header-10 .at-main-menu.menu-light nav ul li.with-out-dropdown > a {
-  color: var(--at-neutral-950);
-}
-.header-10 .at-main-menu.menu-light nav ul li.with-out-dropdown > a::after {
-  filter: none;
-}
-.header-10 .at-main-menu.menu-light nav ul li:hover.with-out-dropdown > a {
-  color: var(--at-neutral-950);
-  background: color-mix(in srgb, var(--at-neutral-950) 8%, transparent);
-}
-
-.at-main-menu.menu-light nav ul li:hover.with-out-dropdown > a {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.2);
-}
-.at-main-menu.menu-light nav ul li.with-out-dropdown > a {
-  color: #fff;
-}
-.at-main-menu.menu-light nav ul li.with-out-dropdown > a::after {
-  filter: invert(1);
-}
-.at-main-menu nav ul li {
-  list-style: none;
-  display: inline-block;
-  position: relative;
-}
-.at-main-menu nav ul li.with-out-dropdown > a {
-  color: var(--at-common-black);
-  position: relative;
-  transition: all 0.4s ease 0.3s ease-out;
-}
 .at-main-menu nav ul li.with-out-dropdown > a::after {
   content: "";
   position: absolute;
@@ -38953,21 +38925,4 @@ body.at-magic-cursor #magic-cursor {
   background-position: center;
   z-index: 0;
   /* I removed SVG arrow sign */
-  
-}
-.at-main-menu nav ul li:hover > .submenu {
-  visibility: visible;
-  opacity: 1;
-  transform: scale(1);
-}
-.at-main-menu nav ul li:hover.with-out-dropdown > a {
-  transition: all 0.4s ease 0.3s ease-out;
-}
-
-.at-main-menu nav ul li:hover.with-out-dropdown > a {
-  transition: all 0.4s ease 0.3s ease-out;
-}
-
-[data-bs-theme="dark"] .at-main-menu nav ul li.with-out-dropdown > a::after {
-  filter: invert(1);
 }
