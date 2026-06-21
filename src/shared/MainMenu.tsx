@@ -215,16 +215,16 @@ export default function MainMenu() {
           <LinkSwap label="Page" />
         </a>
         <div className="at-submenu submenu at-megamenu">
-          <div className="row">
+          <div className="">
             <div className="col-xl-4">
               <MegaColumnCustoms title="About Us" to="/about-1" />
             </div>
             <div className="col-xl-4">
               <MegaColumnCustoms title="Services" to="services-2" />
             </div>
-            <div className="col-xl-4">
+            {/* <div className="col-xl-4">
               <MegaColumn title="Other" items={OTHER_LINKS} />
-            </div>
+            </div> */}
           </div>
         </div>
       </li>
