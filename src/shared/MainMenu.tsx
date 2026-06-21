@@ -18,6 +18,20 @@ const MEGA_ARROW = (
 
 type Item = { to: string; label: string };
 
+
+
+
+const Page_links: Item[] = [
+  { to: "/about-1", label: "About 01" },
+  { to: "/services-2", label: "Service 02" },
+  { to: "/about-3", label: "About 03" },
+  { to: "/team", label: "Team" },
+  { to: "/team-details", label: "Team Details" },
+  { to: "/pricing", label: "Pricing" },
+  // { to: "/coming-soon", label: "Coming Soon" },
+  { to: "/faqs", label: "FAQs" },
+];
+
 const HOME_LIGHT: Item[] = [
   { to: "/", label: "01. Creative Agency" },
   { to: "/index-2", label: "02. Digital Agency" },
@@ -135,13 +149,31 @@ function MenuLink({ to, children }: { to: string; children: React.ReactNode }) {
   );
 }
 
-function MegaColumn({ title, items }: { title: string; items: Item[] }) {
+// function MegaColumn({ title, items }: { title: string; items: Item[] }) {
+//   return (
+//     <div className="at-megamenu-box">
+//       {/* <div className="at-megamenu-title-wrap">
+//         <span className="at-megamenu-title">{title}</span>
+//         {MEGA_ARROW}
+//       </div> */}
+//       <ul>
+//         {items.map((it) => (
+//           <li key={it.label}>
+//             <MenuLink to={it.to}>{it.label}</MenuLink>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
+function MegaColumn({ items }: { items: Item[] }) {
   return (
     <div className="at-megamenu-box">
-      <div className="at-megamenu-title-wrap">
+      {/* <div className="at-megamenu-title-wrap">
         <span className="at-megamenu-title">{title}</span>
         {MEGA_ARROW}
-      </div>
+      </div> */}
       <ul>
         {items.map((it) => (
           <li key={it.label}>
@@ -215,12 +247,12 @@ export default function MainMenu() {
           <LinkSwap label="Page" />
         </a>
         <div className="at-submenu submenu at-megamenu">
-          <div className="">
-            <div className="col-xl-4">
-              <MegaColumnCustoms title="About Us" to="/about-1" />
+          <div className="row">
+            <div className="col-xl-5">
+              <MegaColumn items={Page_links} />
             </div>
-            <div className="col-xl-4">
-              <MegaColumnCustoms title="Services" to="services-2" />
+            <div className="col-xl-5">
+              <MegaColumn items={Page_links} />
             </div>
             {/* <div className="col-xl-4">
               <MegaColumn title="Other" items={OTHER_LINKS} />
